@@ -2,17 +2,12 @@
 #pragma GCC optimize ("-O3")
 
 void sw_uart_setup(due_sw_uart *uart, int rx, int stopbits, int databits, int paritybit) {
-	
 	uart->pin_rx     = rx;
 	uart->stopbits   = stopbits;
 	uart->paritybit  = paritybit;
   uart->databits   = databits;
   pinMode(rx, INPUT);
-  
 }
-
-
-
 
 int calc_even_parity(char data) {
   int ones = 0;
